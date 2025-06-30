@@ -1,0 +1,13 @@
+ibm-watson
+python-dotenv
+ibm-watsonx-ai
+streamlit
+pandas
+PyMuPDF
+matplotlib
+plotly.express
+reportlab
+fastapi
+uvicorn[standard]
+python-multipart
+asana
