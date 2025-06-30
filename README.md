@@ -1,63 +1,80 @@
-GraniteRegulate: AI-Powered GDPR and HIPAA Compliance Tool
-1. Project Overview
+# GraniteRegulate: AI-Powered GDPR and HIPAA Compliance Tool
+
+## 1. Project Overview
+
 GraniteRegulate is an advanced, AI-powered solution designed to automatically detect violations of the General Data Protection Regulation (GDPR) and the Health Insurance Portability and Accountability Act (HIPAA) in corporate data. By analyzing meeting recordings and structured data files, our tool identifies and flags the presence of Personally Identifiable Information (PII) and Protected Health Information (PHI), ensuring your organization remains compliant with critical data protection regulations.
 
-GDPR Compliance: Protects personal data by ensuring that sensitive information such as names, email addresses, and phone numbers are handled in accordance with strict regulatory standards.
-HIPAA Compliance: Safeguards protected health information, including patient records, medical diagnoses, and treatment details, from unauthorized access and disclosure.
-2. Core Technology
-Our solution is powered by IBM's Granite large language models, which provide state-of-the-art capabilities in both speech-to-text transcription and natural language processing. This allows for highly accurate, real-time analysis of both audio and text-based data.
+GDPR Compliance: Detects names, email addresses, phone numbers, and other sensitive personal data to ensure regulatory alignment.  
+HIPAA Compliance: Flags health-related information such as diagnoses, patient records, and treatment data for unauthorized exposure.
 
-3. Key Features
-Real-Time Violation Detection: Instantly identifies and flags potential GDPR and HIPAA violations in audio recordings and CSV files.
-Automated Task Management: Seamlessly integrates with Asana to automatically create detailed tasks for each detected violation, ensuring swift remediation.
-Comprehensive Reporting: Generates downloadable PDF reports that provide a clear overview of all detected violations, including the specific rules that were breached.
-Interactive Dashboard: A user-friendly React-based dashboard visualizes violation data through interactive charts and detailed tables, offering at-a-glance insights into your compliance status.
-Rule Cross-Referencing: Validates data against pre-loaded GDPR and HIPAA rule sets to ensure a high degree of accuracy in violation detection.
-4. System Architecture
-The application is built on a modern, scalable architecture, with a FastAPI backend and a React frontend.
+## 2. Core Technology
 
-Backend Components:
+GraniteRegulate leverages IBM’s Granite Large Language Models, offering high-precision speech-to-text and NLP capabilities. This enables accurate, real-time analysis of audio and textual datasets.
 
-API Endpoints (main.py):
+## 3. Key Features
 
-POST /api/analyze: The core endpoint for file analysis. It accepts CSV, PDF, and audio files, extracts the relevant text, and initiates the violation detection process.
-POST /api/generate-report: Generates a downloadable PDF report based on the detected violations.
-Violation Analysis (watsonchat.py):
+- Real-Time Violation Detection: Detects GDPR and HIPAA violations in audio recordings and CSV files.
+- Automated Task Management: Integrates with Asana, auto-generating tasks for each violation to ensure quick remediation.
+- Comprehensive PDF Reporting: Generates clear, downloadable compliance reports with rule-specific insights.
+- Interactive Dashboard: Built using React, visualizes violation data through dynamic charts and detailed tables.
+- Rule Cross-Referencing: Compares data against GDPR and HIPAA rule sets for precision compliance validation.
 
-Integrates with IBM WatsonX AI using the ibm-watsonx-ai library.
-Leverages the ibm/granite-13b-instruct-v2 model to analyze text for GDPR and HIPAA violations.
-Speech-to-Text (speech.py):
+## 4. System Architecture
 
-Utilizes the IBM Watson Speech to Text V1 service to transcribe audio files into text for analysis.
-Asana Integration (asana_client.py):
+### Backend (FastAPI)
 
-Connects to the Asana API to automatically create a new task for each detected violation, streamlining the remediation workflow.
-Frontend Components:
+- API Endpoints (main.py):
+  - POST /api/analyze: Accepts .csv, .pdf, or .mp3/.wav files and initiates analysis.
+  - POST /api/generate-report: Generates downloadable compliance reports.
 
-A React-based user interface for file uploads and data visualization.
-Interactive charts and tables to display violation statistics and details.
-Real-time updates to the dashboard as new data is processed.
-5. Getting Started
-To get the application up and running, follow these steps:
+- Violation Detection (watsonchat.py):
+  - Uses ibm-watsonx-ai with ibm/granite-13b-instruct-v2 to analyze content for GDPR/HIPAA violations.
 
-Clone the repository:
+- Speech-to-Text (speech.py):
+  - Transcribes meeting audio using IBM Watson STT V1 service.
 
+- Asana Integration (asana_client.py):
+  - Creates task items in Asana for every violation identified.
+
+### Frontend (React)
+
+- User interface for file uploads and dashboard
+- Real-time charts and tables for violation insights
+- Live updates as data is processed
+
+## 5. Getting Started
+
+### 5.1 Clone the repository
+
+```bash
 git clone https://github.com/your-repo/GraniteRegulate.git
 cd GraniteRegulate
-Set up the backend:
 
-Navigate to the backend directory.
-Create a .env file and populate it with your credentials, using .env.example as a template.
-Install the required dependencies:
-pip install -r requirement.txt
-Run the backend server:
+### 5.2 Clone the repository
+bash
+Copy
+Edit
+cd backend
+cp .env.example .env  # Add your API keys and configurations
+pip install -r requirements.txt
 uvicorn main:app --reload
-Set up the frontend:
 
-Navigate to the frontend directory.
-Install the required dependencies:
+5.3 Frontend Setup
+bash
+Copy
+Edit
+cd frontend
 npm install
-Run the frontend development server:
 npm run dev
+
 6. Hackathon Showcase
-GraniteRegulate is proud to be a part of the IBM Hackathon. Our project demonstrates the power of IBM's Granite models in solving real-world compliance challenges, providing a robust, scalable, and highly accurate solution for modern enterprises.
+GraniteRegulate was developed as part of the IBM Hackathon, showcasing the real-world application of IBM's Granite LLMs in solving compliance and data privacy challenges. The solution is robust, scalable, and effective in identifying regulatory violations in real-time.
+
+7. Developer Info
+Shoury Pandya
+Email: pshoury@gmail.com
+LinkedIn: https://linkedin.com/in/shourypandya
+GitHub: https://github.com/ShouryPandya
+
+8. License
+This project is licensed under the MIT License. See LICENSE for more information.
