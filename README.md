@@ -49,32 +49,36 @@ GraniteRegulate leverages IBM’s Granite Large Language Models, offering high-p
 ```bash
 git clone https://github.com/your-repo/GraniteRegulate.git
 cd GraniteRegulate
+```
 
-### 5.2 Clone the repository
-bash
-Copy
-Edit
+### 5.2 Backend Setup
+
+```bash
 cd backend
 cp .env.example .env  # Add your API keys and configurations
 pip install -r requirements.txt
 uvicorn main:app --reload
+```
 
-5.3 Frontend Setup
-bash
-Copy
-Edit
+### 5.3 Frontend Setup
+
+```bash
 cd frontend
 npm install
 npm run dev
+```
 
-6. Hackathon Showcase
+## 6. Hackathon Showcase
+
 GraniteRegulate was developed as part of the IBM Hackathon, showcasing the real-world application of IBM's Granite LLMs in solving compliance and data privacy challenges. The solution is robust, scalable, and effective in identifying regulatory violations in real-time.
 
-7. Developer Info
-Shoury Pandya
-Email: pshoury@gmail.com
-LinkedIn: https://linkedin.com/in/shourypandya
+## 7. Developer Info
+
+Shoury Pandya  
+Email: pshoury@gmail.com  
+LinkedIn: https://linkedin.com/in/shourypandya  
 GitHub: https://github.com/ShouryPandya
 
-8. License
-This project is licensed under the MIT License. See LICENSE for more information.
+## 8. License
+
+This project is licensed under the MIT License. See `LICENSE` for more information.
